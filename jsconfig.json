@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@assets/*": ["src/assets/*"],
+      "@components/*": ["src/components/*"],
+      "@router": ["src/router/*"],
+      "@views/*": ["src/views/*"],
+      "@src/*": ["src/*"]
+    },
+    "jsx": "preserve"
+  },
+  "typeAcquisition": {
+    "enable": true
+  },
+  "exclude": ["public", "node_modules", "submodules"],
+  "include": ["./src/**/*"]
+}
