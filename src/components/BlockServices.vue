@@ -8,7 +8,7 @@
     </div>
 
     <!-- Services head -->
-    <div class="block-title">
+    <div id="services" class="block-title">
       <h2>My services</h2>
     </div>
 

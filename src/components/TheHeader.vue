@@ -34,8 +34,8 @@ const emit = defineEmits(["onClickMenuItem"]);
 
 const menuTabs = [
   {
-    title: "Skills",
-    route: "skills",
+    title: "Services",
+    route: "services",
   },
   {
     title: "Portfolio",
@@ -47,13 +47,14 @@ const menuTabs = [
   },
   {
     title: "Contact",
-    route: "contacts",
+    route: "contact",
   },
 ];
 
 let showMenu = ref(false);
 
 const onClickMenuItem = (item) => {
+  showMenu.value = false;
   emit("onClickMenuItem", item);
 };
 </script>

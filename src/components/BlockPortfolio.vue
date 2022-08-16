@@ -1,7 +1,7 @@
 <template>
   <div class="block-portfolio">
     <!-- Portfolio head -->
-    <div class="block-title">
+    <div id="portfolio" class="block-title">
       <h2>My portfolio</h2>
       <h3>A selection of my best projects.</h3>
     </div>

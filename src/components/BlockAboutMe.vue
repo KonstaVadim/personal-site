@@ -6,7 +6,7 @@
     </div>
 
     <!-- Portfolio head -->
-    <div class="block-title">
+    <div id="about" class="block-title">
       <h2>About me</h2>
       <h3>Welcome to Vadim's World</h3>
     </div>

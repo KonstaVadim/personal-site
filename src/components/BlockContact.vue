@@ -5,7 +5,7 @@
       <div class="vertical-line"></div>
     </div>
 
-    <div class="contact-title">
+    <div id="contact" class="contact-title">
       <h2>Let's work together!</h2>
     </div>
 

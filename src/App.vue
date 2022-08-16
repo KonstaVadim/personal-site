@@ -27,20 +27,18 @@ import { inject, ref } from "vue";
 
 const smoothScroll = inject("smoothScroll");
 
-const ddd = ref(null);
-
-const test = () => {
-  const offset = document.getElementById("nav").offsetHeight + 10;
-  console.log(offset);
+const scrollTo = (id) => {
+  const offset = 82;
+  const blockElement = document.getElementById(id);
   smoothScroll({
-    scrollTo: ddd.value,
+    scrollTo: blockElement,
     offset: -offset,
   });
-  console.log(123);
 };
 
 const onClickMenuItem = (item) => {
   console.log(item);
+  scrollTo(item.route);
 };
 </script>
 
