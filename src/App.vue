@@ -1,6 +1,7 @@
 <template>
   <!-- Header -->
   <TheHeader @onClickMenuItem="onClickMenuItem" />
+
   <!-- Blocks -->
   <BlockMain />
   <BlockQuote />

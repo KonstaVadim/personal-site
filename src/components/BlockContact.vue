@@ -5,7 +5,7 @@
       <div class="vertical-line"></div>
     </div>
 
-    <div class="block-title">
+    <div class="contact-title">
       <h2>Let's work together!</h2>
     </div>
 
@@ -21,6 +21,7 @@ import ContactButton from "./ContactButton.vue";
 
 <style scoped lang="scss">
 .block-contact {
+  padding: 0 2rem;
   .vertical-line-container {
     justify-content: center;
 
@@ -30,8 +31,7 @@ import ContactButton from "./ContactButton.vue";
     }
   }
 
-  .block-title {
-    margin-top: 6rem;
+  .contact-title {
     text-align: center;
 
     h2 {
@@ -42,7 +42,6 @@ import ContactButton from "./ContactButton.vue";
       -webkit-text-fill-color: transparent;
       animation: gradient 9s ease infinite;
       font-weight: 600;
-      font-size: 5rem;
       opacity: 1;
     }
   }
@@ -50,8 +49,19 @@ import ContactButton from "./ContactButton.vue";
   .button-container {
     display: flex;
     justify-content: center;
-    padding: 5rem 0 10rem;
   }
+}
+
+.contact-title {
+  margin-top: 5rem;
+
+  h2 {
+    font-size: 5rem;
+  }
+}
+
+.button-container {
+  padding: 5rem 0 10rem;
 }
 
 @keyframes gradient {
@@ -63,6 +73,43 @@ import ContactButton from "./ContactButton.vue";
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .button-container {
+    padding: 5rem 0 8rem;
+  }
+  .contact-title {
+    margin-top: 4rem;
+
+    h2 {
+      font-size: 4rem;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact-title {
+    margin-top: 3rem;
+
+    h2 {
+      font-size: 3rem;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .block-contact {
+    padding: 0 1rem;
+  }
+
+  .contact-title {
+    margin-top: 2rem;
+
+    h2 {
+      font-size: 2.5rem;
+    }
   }
 }
 </style>

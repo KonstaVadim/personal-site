@@ -81,16 +81,11 @@ import CardInfo from "./CardInfo.vue";
 
     .cards-about-me {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(2, 1fr);
-      width: 0px;
       flex-grow: 1;
-      min-width: 670px;
       gap: 1rem;
     }
 
     .image-about-me {
-      width: 30%;
       max-width: 350px;
       flex-grow: 1;
 
@@ -106,9 +101,35 @@ import CardInfo from "./CardInfo.vue";
   }
 }
 
+.cards-about-me {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  min-width: 670px;
+  width: 0px;
+}
+
 @media screen and (max-width: 991px) {
+  .block-about-me {
+    padding: 0 5rem 1.5rem;
+  }
 }
 
 @media screen and (max-width: 768px) {
+  .block-about-me {
+    padding: 0 3rem 1.5rem;
+  }
+
+  .cards-about-me {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    min-width: unset;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .block-about-me {
+    padding: 0 1.5rem 1.5rem;
+  }
 }
 </style>

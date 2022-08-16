@@ -106,4 +106,24 @@ const classesCard = computed(() => {
     text-align: center;
   }
 }
+
+@media screen and (max-width: 991px) {
+  .card-info-title {
+    font-size: 2rem !important;
+  }
+
+  .card-info-content {
+    font-size: 1.125rem !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .card-info-title {
+    font-size: 1.5rem !important;
+  }
+
+  .card-info-content {
+    font-size: 1rem !important;
+  }
+}
 </style>

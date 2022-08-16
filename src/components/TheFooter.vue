@@ -28,8 +28,6 @@
 
   .icon {
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
     background: center/70% no-repeat;
     background-color: #26243b;
     transition: all 0.2s ease;
@@ -84,9 +82,38 @@
   }
 }
 
+.icon {
+  width: 50px;
+  height: 50px;
+}
+
 .copyright-sign {
   text-align: center;
   color: #fff;
   margin-top: 3rem;
+}
+
+@media screen and (max-width: 768px) {
+  .contact-icons {
+    gap: 2rem;
+  }
+  .icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .contact-icons {
+    gap: 1rem;
+  }
+  .icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .copyright-sign {
+    font-size: 0.875rem;
+  }
 }
 </style>
