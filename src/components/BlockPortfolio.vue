@@ -18,10 +18,14 @@
         <img src="../assets/amicum.png" alt="ООО Профсоюз" />
       </div>
     </div>
+
+    <!-- <PortfolioModal /> -->
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import PortfolioModal from "./PortfolioModal.vue";
+</script>
 
 <style scoped lang="scss">
 .block-title {
