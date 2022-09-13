@@ -17,8 +17,7 @@
           @click="onClickMenuItem(tab)"
           class="menu-item"
           v-for="tab in menuTabs"
-          :key="tab.title"
-        >
+          :key="tab.title">
           <span>{{ tab.title }}</span>
         </div>
       </div>
@@ -28,9 +27,10 @@
 
 <script setup>
 import { ref } from "vue";
+import { useRouter } from "vue-router";
 import VAccordion from "@components/VAccordion.vue";
 
-const emit = defineEmits(["onClickMenuItem"]);
+const router = useRouter();
 
 const menuTabs = [
   {
@@ -53,9 +53,10 @@ const menuTabs = [
 
 let showMenu = ref(false);
 
-const onClickMenuItem = (item) => {
+const onClickMenuItem = (tab) => {
   showMenu.value = false;
-  emit("onClickMenuItem", item);
+
+  router.push({ name: "main", params: { route: tab.route } });
 };
 </script>
 

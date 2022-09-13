@@ -6,8 +6,7 @@
         <img
           class="main-image"
           src="../assets/comp.webp"
-          alt="Image of Vadim Konstantinov"
-        />
+          alt="Image of Vadim Konstantinov" />
       </div>
     </div>
 
@@ -46,8 +45,7 @@
 
     <!-- Button Let's work -->
     <div class="lets-work-container">
-      <!-- TODO сделать кнопкой -->
-      <div class="lets-work-button">Let's work!</div>
+      <div class="lets-work-button" @click="onLetsWork">Let's work!</div>
     </div>
 
     <!-- Vertical line -->
@@ -58,7 +56,14 @@
 </template>
 
 <script setup>
+import { useRouter } from "vue-router";
 import FloatingBlock from "./FloatingBlock.vue";
+
+const router = useRouter();
+
+const onLetsWork = () => {
+  router.push({ name: "main", params: { route: "contact" } });
+};
 </script>
 
 <style scoped lang="scss">
@@ -178,14 +183,22 @@ import FloatingBlock from "./FloatingBlock.vue";
   }
 
   .lets-work-container {
+    display: flex;
+    justify-content: center;
     margin-top: 2rem;
     text-align: center;
 
     .lets-work-button {
+      cursor: pointer;
       font-size: 1.25rem;
       color: #fff;
       font-weight: 500;
-      opacity: 0.8;
+      opacity: 0.9;
+      transition: transform 0.3s ease-out;
+
+      &:hover {
+        transform: scale(1.2);
+      }
     }
   }
 

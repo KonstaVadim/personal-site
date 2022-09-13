@@ -1,12 +1,24 @@
 <template>
   <div id="footer">
     <div class="contact-icons">
-      <div class="icon email"></div>
-      <div class="icon git-hub"></div>
-      <div class="icon whats-app"></div>
-      <div class="icon linked-in"></div>
-      <div class="icon instagram"></div>
-      <div class="icon vk"></div>
+      <a href="mailto:konstavadim@gmail.com">
+        <div class="icon email"></div>
+      </a>
+      <a href="https://github.com/KonstaVadim" target="_blank">
+        <div class="icon git-hub"></div>
+      </a>
+      <a href="tel:+79236290861">
+        <div class="icon whats-app"></div>
+      </a>
+      <!-- <a href="mailto:konstavadim@gmail.com" target="_blank">
+        <div class="icon linked-in"></div>
+      </a> -->
+      <a href="https://www.instagram.com/consta_v2.0/" target="_blank">
+        <div class="icon instagram"></div>
+      </a>
+      <a href="https://vk.com/c0nsta" target="_blank">
+        <div class="icon vk"></div>
+      </a>
     </div>
 
     <div class="copyright-sign">© 2022 Konstantinov Vadim</div>

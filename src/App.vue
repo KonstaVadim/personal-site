@@ -1,45 +1,16 @@
 <template>
   <!-- Header -->
-  <TheHeader @onClickMenuItem="onClickMenuItem" />
+  <TheHeader />
 
-  <!-- Blocks -->
-  <BlockMain />
-  <BlockQuote />
-  <BlockServices />
-  <BlockPortfolio />
-  <BlockAboutMe />
-  <BlockContact />
-
-  <!-- Footer -->
-  <TheFooter />
+  <router-view v-slot="{ Component }">
+    <transition name="fade" mode="out-in" :duration="300">
+      <component :is="Component" />
+    </transition>
+  </router-view>
 </template>
 
 <script setup>
 import TheHeader from "@components/TheHeader.vue";
-import TheFooter from "@components/TheFooter.vue";
-import BlockMain from "@components/BlockMain.vue";
-import BlockQuote from "@components/BlockQuote.vue";
-import BlockServices from "@components/BlockServices.vue";
-import BlockPortfolio from "@components/BlockPortfolio.vue";
-import BlockAboutMe from "@components/BlockAboutMe.vue";
-import BlockContact from "@components/BlockContact.vue";
-import { inject, ref } from "vue";
-
-const smoothScroll = inject("smoothScroll");
-
-const scrollTo = (id) => {
-  const offset = 82;
-  const blockElement = document.getElementById(id);
-  smoothScroll({
-    scrollTo: blockElement,
-    offset: -offset,
-  });
-};
-
-const onClickMenuItem = (item) => {
-  console.log(item);
-  scrollTo(item.route);
-};
 </script>
 
 <style lang="scss">
@@ -90,6 +61,26 @@ body {
     margin-top: 0.5rem;
     font-weight: 600;
   }
+}
+
+.fade-view-enter-active,
+.fade-view-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-view-enter-from,
+.fade-view-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 
 @media screen and (max-width: 991px) {

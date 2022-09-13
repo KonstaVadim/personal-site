@@ -1,14 +1,25 @@
 <template>
-  <button class="contact-button" @mouseleave="onMouseLeave">
+  <button
+    class="contact-button"
+    @click="onClickContactMe"
+    @mouseleave="onMouseLeave">
     <span>Contact me</span>
     <div class="contact-button-icon"></div>
   </button>
 </template>
 
 <script setup>
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+
 const onMouseLeave = (event) => {
   // Когда сдвигаем курсор при фокусе на кнопке
   event.target.blur();
+};
+
+const onClickContactMe = () => {
+  router.push({ name: "contact" });
 };
 </script>
 
