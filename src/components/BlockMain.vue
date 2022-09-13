@@ -93,6 +93,7 @@ const onLetsWork = () => {
       width: 100%;
       height: 100%;
       border-radius: 50%;
+      user-select: none;
       box-shadow: -50px -20px 40px rgba(169, 255, 135, 0.25),
         0px 50px 40px rgb(255 219 57 / 30%),
         50px -20px 40px rgb(118 255 255 / 30%),

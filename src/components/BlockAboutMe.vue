@@ -16,23 +16,19 @@
         <CardInfo
           title="Education"
           content="Certificated React Developer by SheCodes Workshops in 2021 - 2022"
-          color="pink"
-        />
+          color="pink" />
         <CardInfo
           title="Illustration"
           content="Freelancer illustrator since 2018. A love for portraits and character design"
-          color="green"
-        />
+          color="green" />
         <CardInfo
           title="Influencer"
           content="Created a plataform on Instagram to share coding tips, tutorials and promote tech products (@mili.codes)"
-          color="blue"
-        />
+          color="blue" />
         <CardInfo
           title="Music & Games"
           content="Songwritter, pianist and singer in my freetime. I also enjoy playing videogames as a hobby"
-          color="yellow"
-        />
+          color="yellow" />
       </div>
       <div class="image-about-me">
         <img src="../assets/about.webp" alt="icon of Vadim" />
@@ -92,6 +88,7 @@ import CardInfo from "./CardInfo.vue";
       img {
         width: 100%;
         height: auto;
+        user-select: none;
       }
     }
   }

@@ -24,8 +24,7 @@
           <img
             class="worker-image"
             src="../assets/me-main.png"
-            alt="Image of Vadim Konstantinov"
-          />
+            alt="Image of Vadim Konstantinov" />
 
           <div class="icons">
             <div class="icon code"></div>
@@ -41,22 +40,19 @@
         <CardSkills
           title="Developer Skills"
           content="A great knowledge of HTML / CSS, Javascript and React.js. I make responsive applications with Bootstrap with interactive UI's designs."
-          color="green"
-        >
+          color="green">
           <div class="icon developer-skills"></div>
         </CardSkills>
         <CardSkills
           title="2D Artist"
           content="5+ years of digital illustration experience, mastering techniques in Photoshop and Procreate."
-          color="pink"
-        >
+          color="pink">
           <div class="icon paint-brush"></div>
         </CardSkills>
         <CardSkills
           title="UI Design"
           content="A love for design and a good eye for creativity. I have proficiency in wireframing, color theory and visual communication."
-          color="blue"
-        >
+          color="blue">
           <div class="icon object-ungroup"></div>
         </CardSkills>
       </div>
@@ -155,6 +151,7 @@ import CardSkills from "./CardSkills.vue";
       width: 100%;
       height: 100%;
       border-radius: 50%;
+      user-select: none;
       box-shadow: -10px -10px 25px rgba(135, 255, 171, 0.25),
         0px 10px 25px rgb(255 219 57 / 30%),
         10px -10px 25px rgb(118 255 255 / 30%),

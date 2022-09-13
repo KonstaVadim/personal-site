@@ -89,9 +89,9 @@ const onClickMenuItem = (tab) => {
 
 .brand {
   font-weight: 600;
-  pointer-events: none;
   overflow: hidden;
   height: 40px;
+  user-select: none;
 
   &-list {
     animation: change 10s infinite;

@@ -1,10 +1,11 @@
 <template>
-  <div class="contact-view">
+  <div class="contact-view" @mousemove="onMouseMove">
     <div class="contact-wrapper">
-      <div class="card-contact">
+      <div class="contact-wrapper-background"></div>
+      <div class="card-contact" ref="contactBackground">
         <!-- Image -->
         <div class="image-container">
-          <div class="image">
+          <div class="image parallax-item">
             <img
               class="main-image"
               src="../assets/like.webp"
@@ -14,23 +15,29 @@
 
         <!-- Email -->
         <div class="email-contact">
-          <a href="mailto:konstavadim@gmail.com">
+          <a class="parallax-item" href="mailto:konstavadim@gmail.com">
             <h3>konstavadim@gmail.com</h3>
           </a>
         </div>
 
         <!-- Contact icons -->
         <div class="contact-icons">
-          <a href="https://github.com/KonstaVadim" target="_blank">
+          <a
+            class="parallax-item"
+            href="https://github.com/KonstaVadim"
+            target="_blank">
             <div class="icon github"></div>
           </a>
-          <a href="tel:+79236290861">
+          <a class="parallax-item" href="tel:+79236290861">
             <div class="icon whatsapp"></div>
           </a>
-          <a href="https://www.instagram.com/consta_v2.0/" target="_blank">
+          <a
+            class="parallax-item"
+            href="https://www.instagram.com/consta_v2.0/"
+            target="_blank">
             <div class="icon instagram"></div>
           </a>
-          <a href="https://vk.com/c0nsta" target="_blank">
+          <a class="parallax-item" href="https://vk.com/c0nsta" target="_blank">
             <div class="icon vk"></div>
           </a>
         </div>
@@ -39,13 +46,29 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref } from "vue";
+
+const contactBackground = ref(null);
+
+const onMouseMove = (event) => {
+  const x = event.pageX / window.innerWidth;
+  const y = event.pageY / window.innerHeight;
+
+  contactBackground.value.style.transform = `translate(${x * 15}px, ${
+    y * 15
+  }px)`;
+
+  document.querySelectorAll(".parallax-item").forEach((item) => {
+    item.style.transform = `translate(${x * -25}px, ${y * -25}px)`;
+  });
+};
+</script>
 
 <style scoped lang="scss">
 .contact-wrapper {
   height: 100vh;
   background: linear-gradient(90deg, #fec15e, #7de6ac, #4bc0c8);
-  background-size: 400% 400%;
   animation: gradient 10s ease infinite;
   padding: 6.5rem 10rem;
 
@@ -82,6 +105,7 @@
     width: 100%;
     height: 100%;
     border-radius: 50%;
+    user-select: none;
     box-shadow: 0px 20px 40px rgb(90 62 99 / 10%),
       0 0 2pt 4pt rgb(255 255 255 / 60%);
   }
