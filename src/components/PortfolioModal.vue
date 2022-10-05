@@ -19,7 +19,13 @@
         <div class="row">
           <div class="legend">Обязанности</div>
           <div class="responsibilities">
-            {{ data.responsibilities }}
+            <ul>
+              <li
+                v-for="(responsibility, index) in data.responsibilities"
+                :key="index">
+                {{ responsibility }}
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -58,7 +64,7 @@ const onClose = () => {
   flex-direction: column;
   margin: 0 auto;
   padding: 1rem;
-  max-width: 500px;
+  max-width: 700px;
   height: max-content;
   max-height: 100%;
   color: #fff;
@@ -111,5 +117,16 @@ const onClose = () => {
   gap: 1rem;
   line-height: 1.6;
   overflow: auto;
+}
+
+.responsibilities {
+  ul {
+    list-style-type: disc;
+    list-style-position: inside;
+
+    & ::marker {
+      color: #74eef7;
+    }
+  }
 }
 </style>
