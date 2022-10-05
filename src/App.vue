@@ -83,6 +83,26 @@ body {
   opacity: 0;
 }
 
+@media (pointer: fine) {
+  * {
+    scrollbar-color: #dee2e6 transparent;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #dee2e6;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #babdc0;
+  }
+  ::-webkit-scrollbar-thumb:active {
+    background: #585858;
+  }
+}
+
 @media screen and (max-width: 991px) {
   .block-title {
     h2 {

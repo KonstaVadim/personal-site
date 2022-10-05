@@ -38,21 +38,21 @@
       <!-- Content with cards -->
       <div class="service-cards">
         <CardSkills
-          title="Developer Skills"
-          content="A great knowledge of HTML / CSS, Javascript and React.js. I make responsive applications with Bootstrap with interactive UI's designs."
-          color="green">
+          :title="cardDeveloperSkillsText.title"
+          :content="cardDeveloperSkillsText.content"
+          :color="cardDeveloperSkillsText.color">
           <div class="icon developer-skills"></div>
         </CardSkills>
         <CardSkills
-          title="2D Artist"
-          content="5+ years of digital illustration experience, mastering techniques in Photoshop and Procreate."
-          color="pink">
+          :title="cardFrontendText.title"
+          :content="cardFrontendText.content"
+          :color="cardFrontendText.color">
           <div class="icon paint-brush"></div>
         </CardSkills>
         <CardSkills
-          title="UI Design"
-          content="A love for design and a good eye for creativity. I have proficiency in wireframing, color theory and visual communication."
-          color="blue">
+          :title="cardBackendText.title"
+          :content="cardBackendText.content"
+          :color="cardBackendText.color">
           <div class="icon object-ungroup"></div>
         </CardSkills>
       </div>
@@ -69,6 +69,27 @@
 
 <script setup>
 import CardSkills from "./CardSkills.vue";
+
+const cardDeveloperSkillsText = {
+  title: "Developer Skills",
+  content:
+    "На текущий момент, я разрабатываю web-интерфесы для управления устройствами пожарной безопасности. Также работал над созданием различных автоматизированных информационных систем.",
+  color: "green",
+};
+
+const cardFrontendText = {
+  title: "Frontend",
+  content:
+    "3+ лет опыта разработки интерфейсов. Имею отличное знание HTML/CSS/Javascript и Vue.js.",
+  color: "pink",
+};
+
+const cardBackendText = {
+  title: "Backend",
+  content:
+    "Использовал Django для разработки личного кабинета. А также, создавал API для передачи данных между устройством и клиентом.",
+  color: "blue",
+};
 </script>
 
 <style scoped lang="scss">
@@ -207,7 +228,7 @@ import CardSkills from "./CardSkills.vue";
     }
 
     .developer-skills {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3C!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --%3E%3Cpath d='M318.4 304.5c-3.531 9.344-12.47 15.52-22.45 15.52h-105l45.15 94.82c9.496 19.94 1.031 43.8-18.91 53.31c-19.95 9.504-43.82 1.035-53.32-18.91L117.3 351.3l-75 88.25c-4.641 5.469-11.37 8.453-18.28 8.453c-2.781 0-5.578-.4844-8.281-1.469C6.281 443.1 0 434.1 0 423.1V56.02c0-9.438 5.531-18.03 14.12-21.91C22.75 30.26 32.83 31.77 39.87 37.99l271.1 240C319.4 284.6 321.1 295.1 318.4 304.5z' fill='%2342d392'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3Cpath d='M318.4 304.5c-3.531 9.344-12.47 15.52-22.45 15.52h-105l45.15 94.82c9.496 19.94 1.031 43.8-18.91 53.31c-19.95 9.504-43.82 1.035-53.32-18.91L117.3 351.3l-75 88.25c-4.641 5.469-11.37 8.453-18.28 8.453c-2.781 0-5.578-.4844-8.281-1.469C6.281 443.1 0 434.1 0 423.1V56.02c0-9.438 5.531-18.03 14.12-21.91C22.75 30.26 32.83 31.77 39.87 37.99l271.1 240C319.4 284.6 321.1 295.1 318.4 304.5z' fill='%2342d392'/%3E%3C/svg%3E");
     }
 
     .object-ungroup {

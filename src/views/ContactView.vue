@@ -28,7 +28,7 @@
             target="_blank">
             <div class="icon github"></div>
           </a>
-          <a class="parallax-item" href="tel:+79236290861">
+          <a class="parallax-item" href="tel:+79963327071">
             <div class="icon whatsapp"></div>
           </a>
           <a

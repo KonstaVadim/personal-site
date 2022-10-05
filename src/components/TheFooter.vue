@@ -7,7 +7,7 @@
       <a href="https://github.com/KonstaVadim" target="_blank">
         <div class="icon git-hub"></div>
       </a>
-      <a href="tel:+79236290861">
+      <a href="tel:+79963327071">
         <div class="icon whats-app"></div>
       </a>
       <!-- <a href="mailto:konstavadim@gmail.com" target="_blank">

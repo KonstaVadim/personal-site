@@ -3,9 +3,9 @@
     <div class="card-info-title">
       {{ title }}
     </div>
-    <div class="card-info-content">
+    <span class="card-info-content">
       {{ content }}
-    </div>
+    </span>
   </div>
 </template>
 

@@ -14,21 +14,21 @@
     <div class="content-container">
       <div class="cards-about-me">
         <CardInfo
-          title="Education"
-          content="Certificated React Developer by SheCodes Workshops in 2021 - 2022"
-          color="pink" />
+          :title="cardEducationText.title"
+          :content="cardEducationText.content"
+          :color="cardEducationText.color" />
         <CardInfo
-          title="Illustration"
-          content="Freelancer illustrator since 2018. A love for portraits and character design"
-          color="green" />
+          :title="cardPersonalQualitiesText.title"
+          :content="cardPersonalQualitiesText.content"
+          :color="cardPersonalQualitiesText.color" />
         <CardInfo
-          title="Influencer"
-          content="Created a plataform on Instagram to share coding tips, tutorials and promote tech products (@mili.codes)"
-          color="blue" />
+          :title="cardLanguagesText.title"
+          :content="cardLanguagesText.content"
+          :color="cardLanguagesText.color" />
         <CardInfo
-          title="Music & Games"
-          content="Songwritter, pianist and singer in my freetime. I also enjoy playing videogames as a hobby"
-          color="yellow" />
+          :title="cardHobbiesText.title"
+          :content="cardHobbiesText.content"
+          :color="cardHobbiesText.color" />
       </div>
       <div class="image-about-me">
         <img src="../assets/about.webp" alt="icon of Vadim" />
@@ -38,13 +38,39 @@
     <!-- Portfolio head -->
     <div class="block-title footer-title">
       <h3>Multitalented. Intuitive. Dedicated.</h3>
-      <div class="title-placeholder">Wanna know more? Visit my Instagram</div>
     </div>
   </div>
 </template>
 
 <script setup>
 import CardInfo from "./CardInfo.vue";
+
+const cardEducationText = {
+  title: "Education",
+  content: `Окончил бакалавр по специальности "Фундаментальная информатика и информационные технологии" и магистратуру по специальности "Прикладная информатика".`,
+  color: "pink",
+};
+
+const cardPersonalQualitiesText = {
+  title: "Personal qualities",
+  content:
+    `Для любой задачи найду решение. Умение фокусировать внимание и ответсвенность внутри меня помогает мне не совершать ошибки. Также люблю узнавать и применять в работе что-то новое.`,
+  color: "green",
+};
+
+const cardLanguagesText = {
+  title: "Languages",
+  content:
+    "Радной мой язык - Русский. В данный момент активно изучаю английский и испанский язык.",
+  color: "blue",
+};
+
+const cardHobbiesText = {
+  title: "Hobbies",
+  content:
+    "I enjoy playing video games and watching educational videos on various topics. I also love to travel and learn about the history of the places I have visited.",
+  color: "yellow",
+};
 </script>
 
 <style scoped lang="scss">

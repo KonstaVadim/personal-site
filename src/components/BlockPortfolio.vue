@@ -3,7 +3,7 @@
     <!-- Portfolio head -->
     <div id="portfolio" class="block-title">
       <h2>My portfolio</h2>
-      <h3>A selection of my best projects.</h3>
+      <h3>Компании в которых я работал.</h3>
     </div>
 
     <!-- Portfolio cases -->
