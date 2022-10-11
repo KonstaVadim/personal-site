@@ -7,17 +7,16 @@
       <a href="https://github.com/KonstaVadim" target="_blank">
         <div class="icon git-hub"></div>
       </a>
+      <a
+        href="https://www.linkedin.com/in/vadim-konstantinov-b57098253/"
+        target="_blank">
+        <div class="icon linked-in"></div>
+      </a>
       <a href="tel:+79963327071">
         <div class="icon whats-app"></div>
       </a>
-      <!-- <a href="mailto:konstavadim@gmail.com" target="_blank">
-        <div class="icon linked-in"></div>
-      </a> -->
       <a href="https://www.instagram.com/consta_v2.0/" target="_blank">
         <div class="icon instagram"></div>
-      </a>
-      <a href="https://vk.com/c0nsta" target="_blank">
-        <div class="icon vk"></div>
       </a>
     </div>
 
@@ -83,13 +82,6 @@
 
     &:hover {
       background-image: url("../assets/contacts/instagram.gif");
-    }
-  }
-  .vk {
-    background-image: url("../assets/contacts/vk.png");
-
-    &:hover {
-      background-image: url("../assets/contacts/vk.gif");
     }
   }
 }

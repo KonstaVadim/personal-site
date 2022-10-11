@@ -54,7 +54,7 @@ const cardEducationText = {
 const cardPersonalQualitiesText = {
   title: "Personal qualities",
   content:
-    `Для любой задачи найду решение. Умение фокусировать внимание и ответсвенность внутри меня помогает мне не совершать ошибки. Также люблю узнавать и применять в работе что-то новое.`,
+    `Умение фокусировать внимание и ответственность внутри меня позволяет писать качественный и поддерживаемый код. Для любой задачи найду решение. Люблю узнавать и применять в работе что-то новое.`,
   color: "green",
 };
 
@@ -68,7 +68,7 @@ const cardLanguagesText = {
 const cardHobbiesText = {
   title: "Hobbies",
   content:
-    "I enjoy playing video games and watching educational videos on various topics. I also love to travel and learn about the history of the places I have visited.",
+    "Люблю путешествовать и узнавать об истории мест, которые посетил. Смотрю обучающие видео на различные темы. Играю в видеоигры в свободное время.",
   color: "yellow",
 };
 </script>

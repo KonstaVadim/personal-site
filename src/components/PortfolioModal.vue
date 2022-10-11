@@ -2,7 +2,9 @@
   <div class="portfolio-modal">
     <div class="portfolio-card">
       <div class="modal-header">
-        <h2 class="title">{{ data.name }}</h2>
+        <h2 class="title">
+          <a :href="data.link" target="_blank">{{ data.name }}</a>
+        </h2>
         <div class="close-btn" @click="onClose"></div>
       </div>
       <div class="modal-content">
@@ -64,7 +66,7 @@ const onClose = () => {
   flex-direction: column;
   margin: 0 auto;
   padding: 1rem;
-  max-width: 700px;
+  max-width: 900px;
   height: max-content;
   max-height: 100%;
   color: #fff;
@@ -78,9 +80,17 @@ const onClose = () => {
   margin-bottom: 1.5rem;
 
   .title {
+    margin-left: auto;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  .title a {
     font-size: 1.25rem;
     font-weight: 600;
-    margin-left: auto;
     background-color: #fff;
     background: linear-gradient(90deg, #21ebfa, #74eef7);
     -webkit-background-clip: text;
@@ -121,6 +131,7 @@ const onClose = () => {
 
 .responsibilities {
   ul {
+    white-space: pre-wrap;
     list-style-type: disc;
     list-style-position: inside;
 
