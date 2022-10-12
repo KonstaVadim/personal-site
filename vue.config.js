@@ -1,6 +1,7 @@
 const path = require("path");
 
 module.exports = {
+  publicPath: "/personal-site/",
   configureWebpack: {
     resolve: {
       alias: {
