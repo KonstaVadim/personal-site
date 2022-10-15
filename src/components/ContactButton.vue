@@ -3,13 +3,20 @@
     class="contact-button"
     @click="onClickContactMe"
     @mouseleave="onMouseLeave">
-    <span>Contact me</span>
+    <span>{{ text }}</span>
     <div class="contact-button-icon"></div>
   </button>
 </template>
 
 <script setup>
 import { useRouter } from "vue-router";
+
+const props = defineProps({
+  text: {
+    type: String,
+    default: "",
+  },
+});
 
 const router = useRouter();
 

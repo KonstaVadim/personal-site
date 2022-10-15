@@ -9,7 +9,7 @@
 
     <!-- Services head -->
     <div id="services" class="block-title">
-      <h2>My services</h2>
+      <h2>{{ TEXT.titleBlock }}</h2>
     </div>
 
     <!-- Block content -->
@@ -17,7 +17,7 @@
       <!-- Content with title and icon -->
       <div class="title-and-icon">
         <div class="block-title">
-          <h3>The most creative intuitive workmate.</h3>
+          <h3>{{ TEXT.workmate }}</h3>
         </div>
 
         <div class="image-container">
@@ -68,28 +68,34 @@
 </template>
 
 <script setup>
+import { computed } from "vue";
+import { useStore } from "vuex";
 import CardSkills from "./CardSkills.vue";
 
-const cardDeveloperSkillsText = {
-  title: "Developer Skills",
-  content:
-    "На текущий момент, я разрабатываю web-интерфесы для управления устройствами пожарной безопасности. Также работал над созданием различных автоматизированных информационных систем.",
-  color: "green",
-};
+const store = useStore();
 
-const cardFrontendText = {
-  title: "Frontend",
-  content:
-    "3+ лет опыта разработки интерфейсов. Имею отличное знание HTML/CSS/Javascript и Vue.js.",
-  color: "pink",
-};
+const TEXT = computed(() => store.getters["text/SERVICES_TEXT"]);
 
-const cardBackendText = {
-  title: "Backend",
-  content:
-    "Использовал Django для разработки личного кабинета. А также, создавал API для передачи данных между устройством и клиентом.",
-  color: "blue",
-};
+const cardDeveloperSkillsText = computed(() => {
+  return {
+    ...TEXT.value.cardDeveloperSkillsText,
+    color: "green",
+  };
+});
+
+const cardFrontendText = computed(() => {
+  return {
+    ...TEXT.value.cardFrontendText,
+    color: "pink",
+  };
+});
+
+const cardBackendText = computed(() => {
+  return {
+    ...TEXT.value.cardBackendText,
+    color: "blue",
+  };
+});
 </script>
 
 <style scoped lang="scss">

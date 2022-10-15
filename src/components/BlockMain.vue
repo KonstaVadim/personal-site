@@ -17,35 +17,37 @@
           <img src="../assets/hand.png" alt="Welcome" />
         </div>
         <div class="text">
-          <span>Hi! I am</span>
-          <span class="name">Vadim</span>
+          <span>{{ TEXT.welcome.hello }}</span>
+          <span class="name">{{ TEXT.welcome.name }}</span>
         </div>
       </div>
     </FloatingBlock>
 
     <!-- Front-end -->
     <FloatingBlock class="floating-container-frontend">
-      <div class="floating-frontend">Front-end</div>
+      <div class="floating-frontend">{{ TEXT.frontend }}</div>
     </FloatingBlock>
 
     <!-- Back-end -->
     <FloatingBlock class="floating-container-backend">
-      <div class="floating-backend">Back-end</div>
+      <div class="floating-backend">{{ TEXT.backend }}</div>
     </FloatingBlock>
 
     <!-- Title -->
     <div class="title-container">
       <div class="title">
-        <h1>Vue / Front-end Developer</h1>
+        <h1>{{ TEXT.profession }}</h1>
       </div>
       <div class="based-in">
-        <h2>Based in Moscow, Russia.</h2>
+        <h2>{{ TEXT.based }}</h2>
       </div>
     </div>
 
     <!-- Button Let's work -->
     <div class="lets-work-container">
-      <div class="lets-work-button" @click="onLetsWork">Let's work!</div>
+      <div class="lets-work-button" @click="onLetsWork">
+        {{ TEXT.letsWork }}
+      </div>
     </div>
 
     <!-- Vertical line -->
@@ -56,10 +58,15 @@
 </template>
 
 <script setup>
+import { computed } from "vue";
+import { useStore } from "vuex";
 import { useRouter } from "vue-router";
 import FloatingBlock from "./FloatingBlock.vue";
 
 const router = useRouter();
+const store = useStore();
+
+const TEXT = computed(() => store.getters["text/MAIN_TEXT"]);
 
 const onLetsWork = () => {
   router.push({ name: "main", params: { route: "contact" } });

@@ -2,8 +2,8 @@
   <div class="block-portfolio">
     <!-- Portfolio head -->
     <div id="portfolio" class="block-title">
-      <h2>My portfolio</h2>
-      <h3>Компании в которых я работал.</h3>
+      <h2>{{ TEXT.titleBlock }}</h2>
+      <h3>{{ TEXT.companyTitle }}</h3>
     </div>
 
     <!-- Portfolio cases -->
@@ -31,59 +31,32 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
+import { useStore } from "vuex";
 import PortfolioModal from "./PortfolioModal.vue";
 
-const portfolio = {
-  bolid: {
-    name: `ЗАО НВП "Болид"`,
-    link: "https://bolid.ru/",
-    period: `10.2020-н.в.`,
-    post: `Web-developer`,
-    responsibilities: [
-      `Оптимизировал процесс frontend разработки в web-отделе, а именно:
-        1. разработал корпоративную UI-библиотеку на Vue 3 (для сборки использовал - Rollup.js; для описания документации и тестирования - Confluence и Storybook);
-        2. составил список правил для ESLint'а на основе Google и Vue styleguide.
-      Благодаря этому, затраченное время на разработку web-интерфейсов снизилось в 3-4 раза.`,
+const store = useStore();
 
-      `Разработал личный кабинет настройки и учета устройств пользователя за 3 месяца (для серверной разработки использовал Django REST Framework и БД PostgreSQL; для разработки web-интерфейса - Vue 3)`,
+const TEXT = computed(() => store.getters["text/PORTFOLIO_TEXT"]);
 
-      `Переписал с нуля web-интерфейс для настройки устройства пожарной безопасности за 3 месяца и интегрировал его в личный кабинет.`,
-
-      `Занимался доработкой web-интерфейса устройства пожарной безопасности, а именно:
-        1. произвел рефакторинг более 10 000 тыс. строк JS кода;
-        2. переписал авторизацию и регистрацию пользователя (вместо логина использовал почту), настроил bruteforce защиту;
-        3. переписал получение данных на JSON формат вместо шаблонизатора.`,
-
-      `Участвовал в доработке проекта "Сириус" (7 месяцев параллельной разработки), а именно:
-        1. Доработал и исправил более 120 задач;
-        2. Произвел рефакторинг более 5 000 строк JS кода.`,
-    ],
-  },
-  pfsz: {
-    name: `ООО "Профсоюз"`,
-    link: "https://pfsz.ru/",
-    period: `04.2019-04.2020`,
-    post: `Frontend-developer`,
-    responsibilities: [
-      `Разработал 7 модулей для системы AMICUM с нуля.`,
-
-      `Доработал, интегрировал и произвел рефакторинг 5 готовых модулей в систему AMICUM.`,
-
-      `Сверстал более 10 печатных форм документов с автоматическим заполнением на основе введенных данных.`,
-
-      `Разработал общие компоненты для проекта. Например: модальные окна, таблицы, календарь.`,
-
-      `Занимался поддержанием работоспособности 3D схемы шахт, разработанных на Unity C#.`,
-    ],
-  },
-};
+const portfolio = computed(() => {
+  return {
+    bolid: {
+      ...TEXT.value.companies.bolid,
+      link: "https://bolid.ru/",
+    },
+    pfsz: {
+      ...TEXT.value.companies.pfsz,
+      link: "https://pfsz.ru/",
+    },
+  };
+});
 
 let activeModal = ref("");
 let portfolioData = ref({});
 
 const showPortfolioModal = (type) => {
-  portfolioData.value = portfolio[type];
+  portfolioData.value = portfolio.value[type];
   activeModal.value = "PortfolioModal";
 };
 

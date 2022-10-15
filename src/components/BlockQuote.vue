@@ -9,18 +9,27 @@
     <div class="quote-container">
       <div class="quote">
         <h3 class="size-quote first-part-quote">
-          Perfection is achieved, not when there is nothing more to add,
+          {{ TEXT.firstPart }}
         </h3>
         <h3 class="size-quote second-part-quote">
-          but when there is nothing left to take away.
+          {{ TEXT.secondPart }}
         </h3>
       </div>
-      <div class="title-placeholder">- Antoine de Saint-Exupéry</div>
+      <div class="title-placeholder">
+        {{ TEXT.author }}
+      </div>
     </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { computed } from "vue";
+import { useStore } from "vuex";
+
+const store = useStore();
+
+const TEXT = computed(() => store.getters["text/QUOTE_TEXT"]);
+</script>
 
 <style scoped lang="scss">
 .block-quote {

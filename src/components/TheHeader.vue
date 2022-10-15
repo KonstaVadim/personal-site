@@ -2,8 +2,8 @@
   <div id="nav">
     <div class="brand">
       <div class="brand-list">
-        <div class="brand-item">Vadim Konstantinov</div>
-        <div class="brand-item">Web Developer</div>
+        <div class="brand-item">{{ TEXT.brand.name }}</div>
+        <div class="brand-item">{{ TEXT.brand.profession }}</div>
       </div>
     </div>
 
@@ -26,30 +26,34 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import { useRouter } from "vue-router";
+import { useStore } from "vuex";
 import VAccordion from "@components/VAccordion.vue";
 
+const store = useStore();
 const router = useRouter();
 
-const menuTabs = [
+const TEXT = computed(() => store.getters["text/HEADER_TEXT"]);
+
+const menuTabs = computed(() => [
   {
-    title: "Services",
+    title: TEXT.value.tabs.services,
     route: "services",
   },
   {
-    title: "Portfolio",
+    title: TEXT.value.tabs.portfolio,
     route: "portfolio",
   },
   {
-    title: "About me",
+    title: TEXT.value.tabs.about,
     route: "about",
   },
   {
-    title: "Contact",
+    title: TEXT.value.tabs.contact,
     route: "contact",
   },
-];
+]);
 
 let showMenu = ref(false);
 

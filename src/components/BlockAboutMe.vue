@@ -7,8 +7,8 @@
 
     <!-- Portfolio head -->
     <div id="about" class="block-title">
-      <h2>About me</h2>
-      <h3>Welcome to Vadim's World</h3>
+      <h2>{{ TEXT.titleBlock }}</h2>
+      <h3>{{ TEXT.welcome }}</h3>
     </div>
 
     <div class="content-container">
@@ -37,40 +37,47 @@
 
     <!-- Portfolio head -->
     <div class="block-title footer-title">
-      <h3>Multitalented. Intuitive. Dedicated.</h3>
+      <h3>{{ TEXT.commonQualities }}</h3>
     </div>
   </div>
 </template>
 
 <script setup>
+import { computed } from "vue";
+import { useStore } from "vuex";
 import CardInfo from "./CardInfo.vue";
 
-const cardEducationText = {
-  title: "Education",
-  content: `Окончил бакалавр по специальности "Фундаментальная информатика и информационные технологии" и магистратуру по специальности "Прикладная информатика".`,
-  color: "pink",
-};
+const store = useStore();
 
-const cardPersonalQualitiesText = {
-  title: "Personal qualities",
-  content:
-    `Умение фокусировать внимание и ответственность внутри меня позволяет писать качественный и поддерживаемый код. Для любой задачи найду решение. Люблю узнавать и применять в работе что-то новое.`,
-  color: "green",
-};
+const TEXT = computed(() => store.getters["text/ABOUT_ME_TEXT"]);
 
-const cardLanguagesText = {
-  title: "Languages",
-  content:
-    "Радной мой язык - Русский. В данный момент активно изучаю английский и испанский язык.",
-  color: "blue",
-};
+const cardEducationText = computed(() => {
+  return {
+    ...TEXT.value.cardEducationText,
+    color: "pink",
+  };
+});
 
-const cardHobbiesText = {
-  title: "Hobbies",
-  content:
-    "Люблю путешествовать и узнавать об истории мест, которые посетил. Смотрю обучающие видео на различные темы. Играю в видеоигры в свободное время.",
-  color: "yellow",
-};
+const cardPersonalQualitiesText = computed(() => {
+  return {
+    ...TEXT.value.cardPersonalQualitiesText,
+    color: "green",
+  };
+});
+
+const cardLanguagesText = computed(() => {
+  return {
+    ...TEXT.value.cardLanguagesText,
+    color: "blue",
+  };
+});
+
+const cardHobbiesText = computed(() => {
+  return {
+    ...TEXT.value.cardHobbiesText,
+    color: "yellow",
+  };
+});
 </script>
 
 <style scoped lang="scss">
@@ -108,7 +115,7 @@ const cardHobbiesText = {
     }
 
     .image-about-me {
-      max-width: 350px;
+      max-width: 330px;
       flex-grow: 1;
 
       img {
@@ -127,13 +134,17 @@ const cardHobbiesText = {
 .cards-about-me {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  min-width: 670px;
+  min-width: 800px;
   width: 0px;
 }
 
 @media screen and (max-width: 991px) {
   .block-about-me {
     padding: 0 5rem 1.5rem;
+  }
+
+  .cards-about-me {
+    min-width: 670px;
   }
 }
 
@@ -148,11 +159,19 @@ const cardHobbiesText = {
     min-width: unset;
     width: 100%;
   }
+
+  .image-about-me {
+    max-width: 320px !important;
+  }
 }
 
 @media screen and (max-width: 480px) {
   .block-about-me {
     padding: 0 1.5rem 1.5rem;
+  }
+
+  .image-about-me {
+    max-width: 270px !important;
   }
 }
 </style>

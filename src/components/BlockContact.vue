@@ -6,17 +6,23 @@
     </div>
 
     <div id="contact" class="contact-title">
-      <h2>Let's work together!</h2>
+      <h2>{{ TEXT.letsWork }}</h2>
     </div>
 
     <div class="button-container">
-      <ContactButton></ContactButton>
+      <ContactButton :text="TEXT.contactButton" />
     </div>
   </div>
 </template>
 
 <script setup>
+import { computed } from "vue";
+import { useStore } from "vuex";
 import ContactButton from "./ContactButton.vue";
+
+const store = useStore();
+
+const TEXT = computed(() => store.getters["text/CONTACT_TEXT"]);
 </script>
 
 <style scoped lang="scss">
