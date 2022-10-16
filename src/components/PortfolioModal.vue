@@ -58,7 +58,7 @@ const onClose = () => {
   height: 100%;
   width: 100%;
   z-index: 2;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.75);
 }
 
 .portfolio-card {
@@ -70,7 +70,7 @@ const onClose = () => {
   height: max-content;
   max-height: 100%;
   color: #fff;
-  background-color: rgba(124, 223, 169, 0.5);
+  background-color: rgba(34, 102, 106, 0.8);
   border-radius: 1rem;
   box-shadow: 0 8px 32px 0 rgb(31 38 135 / 12%);
 }
@@ -81,21 +81,55 @@ const onClose = () => {
 
   .title {
     margin-left: auto;
-    transition: transform 0.3s ease;
-
-    &:hover {
-      transform: scale(1.1);
-    }
   }
 
   .title a {
+    color: #54d5df;
     font-size: 1.25rem;
     font-weight: 600;
-    background-color: #fff;
-    background: linear-gradient(90deg, #21ebfa, #74eef7);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    position: relative;
+    transition: color ease 0.7s;
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      left: 0;
+      bottom: -0.1rem;
+      display: block;
+      width: 100%;
+      height: 1px;
+      background: #54d5df !important;
+      transition: 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+      transition-property: transform, transform-origin;
+    }
+
+    &::before {
+      transform: scaleX(0);
+      transform-origin: left;
+    }
+
+    &::after {
+      transform-origin: right;
+      transition-delay: 0.25s;
+    }
+
+    &:hover,
+    &:focus-visible {
+      color: #5aeaf5 !important;
+
+      &::before {
+        background: currentColor !important;
+        transform: scaleX(1);
+        transition-delay: 0.25s;
+      }
+
+      &::after {
+        background: currentColor !important;
+        transform: scaleX(0);
+        transition-delay: 0s;
+      }
+    }
   }
 
   .close-btn {
@@ -110,14 +144,14 @@ const onClose = () => {
     transition: all 300ms ease-in-out;
 
     &:hover {
-      color: #42f2ff;
+      color: #4bc0c8;
       transform: rotateZ(190deg);
     }
   }
 }
 
 .legend {
-  color: #d3d3d3;
+  color: #dfdfdf;
   opacity: 0.9;
 }
 
@@ -137,6 +171,15 @@ const onClose = () => {
 
     & ::marker {
       color: #74eef7;
+    }
+
+    li {
+      padding: 4px 0;
+    }
+
+    li:not(:last-child) {
+      border-bottom: 1px solid rgba(116, 238, 247, 0.3);
+      margin-bottom: 0.5rem;
     }
   }
 }
