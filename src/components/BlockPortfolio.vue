@@ -9,6 +9,11 @@
     <!-- Portfolio cases -->
     <div class="portfolio-items">
       <!-- Bolid -->
+      <div class="item" @click="showPortfolioModal(`smena`)">
+        <img src="../assets/smena.svg" alt="SMENA SPACE" />
+      </div>
+
+      <!-- Bolid -->
       <div class="item" @click="showPortfolioModal(`bolid`)">
         <img src="../assets/bolid.svg" alt="ЗАО НВП Болид" />
       </div>
@@ -41,6 +46,10 @@ const TEXT = computed(() => store.getters["text/PORTFOLIO_TEXT"]);
 
 const portfolio = computed(() => {
   return {
+    smena: {
+      ...TEXT.value.companies.smena,
+      link: "https://smena.space/",
+    },
     bolid: {
       ...TEXT.value.companies.bolid,
       link: "https://bolid.ru/",
