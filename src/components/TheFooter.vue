@@ -12,9 +12,6 @@
         target="_blank">
         <div class="icon linked-in"></div>
       </a>
-      <a href="tel:+79963327071">
-        <div class="icon whats-app"></div>
-      </a>
       <a href="https://www.instagram.com/consta_v2.0/" target="_blank">
         <div class="icon instagram"></div>
       </a>

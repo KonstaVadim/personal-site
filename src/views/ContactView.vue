@@ -34,9 +34,6 @@
             target="_blank">
             <div class="icon linkedin"></div>
           </a>
-          <a class="parallax-item" href="tel:+79963327071">
-            <div class="icon whatsapp"></div>
-          </a>
           <a
             class="parallax-item"
             href="https://www.instagram.com/consta_v2.0/"
